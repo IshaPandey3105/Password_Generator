@@ -59,3 +59,10 @@ This project is built as a **college-level project** to demonstrate backend inte
 ---
 
 ## 📁 Project Structure
+password-generator/
+│
+├── app.py # Flask backend logic
+├── templates/
+│ └── index.html # UI + Jinja templating
+└── static/
+└── style.css # Styling
