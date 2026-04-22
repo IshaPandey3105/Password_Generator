@@ -1,63 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
 
     <!-- Link CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1>🔐 Password Generator</h1>
+      <p>Create secure and customizable passwords instantly</p>
+    </header>
 
-<div class="container">
-    <div class="card">
-        <h2>Password Generator</h2>
+    <div class="container">
+      <div class="card">
+        <h2>Generate Your Password</h2>
 
         <!-- Form -->
         <form method="POST">
-            
-            <!-- Password Length -->
-            <label>Password Length</label>
-            <input type="number" name="length" min="4" max="50" required
-       placeholder="Enter length (4-50)"
-       oninvalid="this.setCustomValidity('Please enter password length between 4 and 50')"
-       oninput="this.setCustomValidity('')">
+          <!-- Password Length -->
+          <label>Password Length</label>
+          <input
+            type="number"
+            name="length"
+            min="4"
+            max="50"
+            required
+            placeholder="Enter length (4-50)"
+            oninvalid="
+              this.setCustomValidity(
+                'Please enter password length between 4 and 50',
+              )
+            "
+            oninput="this.setCustomValidity('')"
+          />
 
-            <!-- Options -->
-            <div class="options">
-                <label><input type="checkbox" name="uppercase"> Include Uppercase</label>
-                <label><input type="checkbox" name="numbers"> Include Numbers</label>
-                <label><input type="checkbox" name="symbols"> Include Symbols</label>
-            </div>
+          <!-- Options -->
+          <div class="options">
+            <label
+              ><input type="checkbox" name="uppercase" /> Include
+              Uppercase</label
+            >
+            <label
+              ><input type="checkbox" name="numbers" /> Include Numbers</label
+            >
+            <label
+              ><input type="checkbox" name="symbols" /> Include Symbols</label
+            >
+          </div>
 
-            <!-- Button -->
-            <button type="submit">Generate Password</button>
+          <!-- Button -->
+          <button type="submit">Generate Password</button>
         </form>
 
         <!-- Output Section -->
         {% if password %}
         <div class="output">
-            <input type="text" id="passwordBox" value="{{ password }}" readonly>
-            
-            <button onclick="copyPassword()">Copy</button>
+          <input type="text" id="passwordBox" value="{{ password }}" readonly />
 
-            <p class="strength">Strength: <span>{{ strength }}</span></p>
+          <button onclick="copyPassword()">Copy</button>
+
+          <p class="strength">
+            Strength: <span class="{{ strength }}">{{ strength|lower }}</span>
+          </p>
         </div>
         {% endif %}
+      </div>
     </div>
-</div>
+    <footer class="footer">
+      <p>© 2026 Password Generator | Built with Flask</p>
+    </footer>
 
-<!-- JavaScript for Copy -->
-<script>
-function copyPassword() {
-    const passwordField = document.getElementById("passwordBox");
-    passwordField.select();
-    passwordField.setSelectionRange(0, 99999); // For mobile support
-    document.execCommand("copy");
-    alert("Password copied!");
-}
-</script>
-
-</body>
+    <!-- JavaScript for Copy -->
+    <script>
+      function copyPassword() {
+        const passwordField = document.getElementById("passwordBox");
+        passwordField.select();
+        passwordField.setSelectionRange(0, 99999); // For mobile support
+        document.execCommand("copy");
+        alert("Password copied!");
+      }
+    </script>
+  </body>
 </html>

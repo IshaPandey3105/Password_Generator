@@ -6,111 +6,125 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Background */
+/* Body Layout */
 body {
     min-height: 100vh;
     background: linear-gradient(135deg, #e6d2b8, #825635);
     display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 20px 0;
+    background: #8b5e3c;   /* brown bar */
+    color: #fff;           /* white text */
+    width: 100%;
+}
+
+.header h1 {
+    font-size: 46px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 26px;
+    opacity: 0.8;
+}
+
+/* Container (center card only) */
+.container {
+    flex: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-/* Container */
-.container {
-    width: 100%;
-    padding: 40px;
-}
-
-/* Bigger Glass Card */
+/* Card */
 .card {
-    max-width: 700px;   /* increased size */
+    max-width: 1000px;
+    min-height: 600px;  
     width: 100%;
-    min-height: 700px;
-    margin: auto;
-    padding: 40px;      /* more spacing */
-    border-radius: 25px;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(139, 94, 60, 0.2);
-
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    padding: 50px;
+    border-radius: 20px;
     background: #f5e6d3;
-    color:rgb(96, 43, 5);
+    border: 1px solid rgba(139, 94, 60, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    color: #5a2e0c;
 }
 
 /* Title */
 .card h2 {
     text-align: center;
-    margin-bottom: 50px;
-    font-size: 60px;   /* bigger */
+    margin-bottom: 29px;
+    font-size: 40px;
 }
 
 /* Labels */
 label {
     display: block;
-    margin-bottom: 40px;
-    font-size: 30px;   /* bigger */
+    margin-bottom: 8px;
+    font-size: 30px;
 }
 
 /* Input */
 input[type="number"] {
     width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #c8a27c;
     margin-bottom: 20px;
-    font-size: 30px;
-    outline:#270c0c;
+    font-size: 35px;
+    outline: none;
+    background: #fffaf3;
+    color: #3e2c23;
 }
 
 /* Options */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
 .options label {
-    display: block;
-    margin-bottom: 30px;
-    font-size: 30px;
-    padding-left: 5px;
-    gap: 10px;  
-    color: rgb(90, 40, 4);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 32px;
+}
+
+/* Checkbox */
+.options input[type="checkbox"] {
+    transform: scale(2.1);
+    cursor: pointer;
+    accent-color: #8b5e3c;
 }
 
 /* Button */
 button {
     width: 100%;
-    padding: 14px;
+    padding: 15px;
     border: none;
-    border-radius: 12px;
-    background: #825635;
-    color: #f2ebf1;
-    font-size: 40px;
+    border-radius: 10px;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 42px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    margin-top: 30px;
-}
-.options label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.options {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;   /* controls space between each option */
+    margin-top: 10px;
 }
 
-
-.options input[type="checkbox"] {
-    transform: scale(2.4);
-    cursor: pointer;
-    accent-color: #8b5e3c; 
-    margin-right: 12px;
-}
 button:hover {
-    background: #aa8049;
+    background: #6e472d;
+    transform: translateY(-6px);
 }
 
-/* Output Section */
+/* Output */
 .output {
     margin-top: 30px;
 }
@@ -118,35 +132,48 @@ button:hover {
 /* Password Box */
 #passwordBox {
     width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    margin-bottom: 12px;
-    outline: none;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #c8a27c;
+    margin-bottom: 10px;
     text-align: center;
     font-weight: bold;
-    font-size: 30px;   /* bigger text */
+    font-size: 38px;
+    background: #fffaf3;
 }
 
 /* Strength */
 .strength {
     margin-top: 10px;
     text-align: center;
-    font-size: 30px;
-    color: rgb(90, 40, 4);
+    font-size: 36px;
 }
 
+/* Strength Colors */
 .strength span {
     font-weight: bold;
 }
+.Weak { color: red; }
+.Medium { color: rgb(213, 140, 4); }
+.Strong { color: green ; }
 
-/* Mobile Optimization */
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #6e472d;   /* slightly darker brown */
+    color: #fff;
+    width: 100%;
+    font-size: 26px;
+}
+
+/* Mobile */
 @media (max-width: 480px) {
     .card {
         padding: 25px;
     }
 
     .card h2 {
-        font-size: 24px;
+        font-size: 22px;
     }
 }
