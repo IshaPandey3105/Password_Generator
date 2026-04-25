@@ -46,6 +46,10 @@ def index():
         use_numbers = request.form.get('numbers') == 'on'
         use_symbols = request.form.get('symbols') == 'on'
 
+        # Handling error case 
+        if length < 4 or length > 50:
+            return render_template('index.html', password="", strength="", error="Length must be between 4 and 50")
+
         password = generate_password(length, use_upper, use_numbers, use_symbols)
 
         # Password strength logic
@@ -56,7 +60,7 @@ def index():
         else:
             strength = "Strong"
 
-    return render_template('index.html', password=password, strength=strength)
+    return render_template('index.html', password=password, strength=strength, error="")
 
 if __name__ == '__main__':
     app.run(debug=True)
