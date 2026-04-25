@@ -21,6 +21,13 @@
       <div class="card">
         <h2>Generate Your Password</h2>
 
+        <!-- ERROR MESSAGE HERE -->
+        {% if error %}
+        <p style="color:red; text-align:center; margin-bottom:10px;">
+          {{ error }}
+        </p>
+        {% endif %}
+
         <!-- Form -->
         <form method="POST">
           <!-- Password Length -->
