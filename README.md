@@ -20,6 +20,11 @@ This project is built as a **college-level project** to demonstrate backend inte
 - Clean and responsive UI
 
 ---
+## User Interface
+<img width="501" height="434" alt="image" src="https://github.com/user-attachments/assets/e89d27b3-a804-440d-99a7-c22d50901363" />
+
+
+---
 
 ## 🛠️ Tech Stack
 
