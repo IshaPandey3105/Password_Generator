@@ -61,14 +61,12 @@ This project is built as a **college-level project** to demonstrate backend inte
 ## 🔄 Application Flow
 
 ### Frontend Flow
-<p align="center">
-  <img src="[(https://gemini.google.com/share/de69b4557b7b)" width="600">
-</p>
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/d846f6c1-3ebf-4476-aa81-adf110910ced" />
+
 
 ### Backend Flow
-<p align="center">
-  <img src="(https://gemini.google.com/share/de69b4557b7b)" width="600">
-</p>
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/b985f6c7-fbf3-45d2-ab42-8b6411352eaa" />
+
 
 ---
 
