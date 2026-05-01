@@ -83,3 +83,24 @@ password-generator/
 │ └── index.html # UI + Jinja templating
 └── static/
 └── style.css # Styling
+
+---
+
+## ▶️ How to Run
+
+1. Install Flask:
+  ```bash
+      pip install flask
+2. Run the application:
+      python app.py
+3. Open in browser:
+      http://127.0.0.1:5000
+
+---
+
+## 📌 Future Improvements
+
+-> Advanced password strength analysis
+-> Save generated passwords securely
+-> Add dark/light mode toggle
+-> Deploy the application online
